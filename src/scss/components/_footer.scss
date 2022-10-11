@@ -1,3 +1,71 @@
 .footer {
-    
+	@include adaptiv-value('padding-top', 80, 40, 1);
+	@include adaptiv-value('padding-bottom', 80, 40, 1);
+
+	&__top {
+		@include flex-center-sb;
+		@include adaptiv-value('margin-bottom', 30, 20, 1);
+
+		@include mq('phone') {
+			flex-direction: column;
+		}
+	}
+
+	&__logo {
+		flex-grow: 0;
+		flex-shrink: 0;
+		margin-right: 30px;
+
+		@include mq('phone') {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		margin-right: -38px;
+		font-weight: $fw-600;
+		font-size: 17px;
+
+		@include mq('tablet-2') {
+			flex-wrap: wrap;
+			margin-right: -25px;
+			margin-bottom: -8px;
+		}
+
+		@include mq('phone') {
+			justify-content: center;
+		}
+	}
+
+	&__item {
+		margin-right: 38px;
+
+		@include mq('tablet-2') {
+			margin-right: 25px;
+			margin-bottom: 8px;
+		}
+	}
+
+	&__bottom {
+		@include flex-center-sb;
+		color: $grey-600;
+		font-size: 16px;
+
+		@include mq('phone') {
+			@include flex-direction-v-center;
+		}
+	}
+
+	&__politics {
+		margin-right: 20px;
+		text-decoration: underline;
+
+		@include mq('phone') {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
 }

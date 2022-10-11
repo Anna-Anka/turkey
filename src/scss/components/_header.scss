@@ -19,9 +19,9 @@
 					z-index: 0;
 					height: 100vh;
 					padding: 100px 15px 30px;
-					overflow: visible;
 					overflow-y: auto;
 					background-color: $white;
+					visibility: visible;
 					opacity: 1;
 				}
 			}
@@ -66,8 +66,8 @@
 		background-color: rgba($turquoise-400, 0.8);
 		border-radius: 50px;
 		@include flex-direction-v-center;
-		@include adaptiv-value('padding-top', 110, 50, 1);
-		@include adaptiv-value('padding-bottom', 110, 50, 1);
+		@include adaptiv-value('padding-top', 110, 40, 1);
+		@include adaptiv-value('padding-bottom', 110, 40, 1);
 		@include adaptiv-value('padding-right', 50, 25, 1);
 		@include adaptiv-value('padding-left', 50, 25, 1);
 	}
@@ -124,10 +124,10 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		overflow: hidden;
 		background-color: transition;
+		visibility: hidden;
 		opacity: 0;
-		transition: top 0.4s, overflow 0.4s, opacity 0.4s, background-color 0.4s;
+		transition: top 0.4s, visibility 0.4s, opacity 0.4s, background-color 0.4s;
 		@include flex-direction-v-center;
 	}
 
