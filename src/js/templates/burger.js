@@ -9,9 +9,9 @@ export const burger = () => {
 
     burger?.addEventListener('click', (e) => {
         burger?.classList.toggle('burger--active');
-        menu?.classList.toggle('menu--active');
+        menu?.classList.toggle('header__navigation--active');
 
-        if (menu?.classList.contains('menu--active')) {
+        if (menu?.classList.contains('header__navigation--active')) {
             burger?.setAttribute('aria-expanded', 'true');
             burger?.setAttribute('aria-label', 'Закрыть меню');
             disableScroll();
@@ -26,7 +26,7 @@ export const burger = () => {
         burger?.setAttribute('aria-expanded', 'false');
         burger?.setAttribute('aria-label', 'Открыть меню');
         burger.classList.remove('burger--active');
-        menu.classList.remove('menu--active');
+        menu.classList.remove('header__navigation--active');
         enableScroll();
     });
 
@@ -35,7 +35,7 @@ export const burger = () => {
             burger?.setAttribute('aria-expanded', 'false');
             burger?.setAttribute('aria-label', 'Открыть меню');
             burger.classList.remove('burger--active');
-            menu.classList.remove('menu--active');
+            menu.classList.remove('header__navigation--active');
             enableScroll();
         });
     });
