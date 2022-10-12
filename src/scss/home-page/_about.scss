@@ -1,0 +1,87 @@
+.about {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+
+		@include mq('tablet') {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__picture {
+		width: 100%;
+		max-width: 520px;
+		margin-right: 30px;
+
+		@include mq('tablet-2') {
+			margin-right: 20px;
+		}
+
+		@include mq('tablet') {
+			display: flex;
+			flex-direction: column-reverse;
+			margin-right: 0;
+		}
+	}
+
+	&__bg {
+		@include bg-cover;
+		width: 100%;
+        @include adaptiv-value('height', 626, 380, 1);
+		@include adaptiv-value('border-radius', 50, 24, 1);
+		@include adaptiv-value('margin-bottom', 45, 25, 1);
+
+        @include mq('tablet') {
+            margin-bottom: 0;
+        }
+	}
+
+	&__content {
+		width: 100%;
+		max-width: 550px;
+	}
+
+	&__text {
+		max-width: 446px;
+		@include adaptiv-value('margin-bottom', 100, 20, 1);
+
+		@include mq('phone') {
+			font-size: 16px;
+		}
+
+		p {
+			&:not(:last-child) {
+				@include adaptiv-value('margin-bottom', 15, 10, 1);
+			}
+		}
+	}
+
+	&__content,
+	&__text,
+	&__picture {
+		@include mq('tablet') {
+			max-width: 100%;
+		}
+	}
+
+	&__items {
+		@include mq('tablet') {
+			margin-bottom: 17px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+        @include adaptiv-value('font-size', 18, 16, 1);
+		background-repeat: no-repeat;
+		background-position: left center;
+		@include adaptiv-value('background-size', 88, 44, 1);
+		@include adaptiv-value('padding-left', 125, 60, 1);
+		@include adaptiv-value('min-height', 88, 44, 1);
+
+		&:not(:last-child) {
+			@include adaptiv-value('margin-bottom', 30, 15, 1);
+		}
+	}
+}
