@@ -1,0 +1,83 @@
+.form-request {
+	color: $white;
+	background-image: linear-gradient(130.76deg, #278f7f 0.96%, #75c4f1 200.58%);
+	@include adaptiv-value('padding-top', 100, 60, 1);
+	@include adaptiv-value('padding-bottom', 100, 60, 1);
+
+	&__wrapper {
+		display: flex;
+        @include adaptiv-value('margin-bottom', 100, 40, 1);
+
+		@include mq('tablet-2') {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&__content,
+	&__quote {
+		width: 100%;
+		max-width: 48%;
+
+		@include mq('tablet-2') {
+			max-width: 100%;
+		}
+	}
+
+	&__quote {
+		position: relative;
+		margin-right: 40px;
+		padding: 0 40px;
+
+		&::before,
+		&::after {
+			position: absolute;
+			line-height: 1.5;
+			@include adaptiv-value('font-size', 100, 50, 1);
+		}
+
+		&::before {
+			top: 45px;
+			left: 0;
+			transform: translateY(-100%);
+			content: '„';
+		}
+
+		&::after {
+			right: 0;
+			bottom: 5px;
+			transform: translateY(40%);
+			content: '“';
+
+			@include mq('tablet-2') {
+				transform: translateY(90%);
+			}
+		}
+
+		@include mq('tablet-2') {
+			margin-right: 0;
+		}
+
+		@include mq('phone') {
+			font-size: 16px;
+		}
+	}
+
+	&__content {
+		@include mq('tablet-2') {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__title {
+		color: $white;
+		@include adaptiv-value('margin-bottom', 60, 30, 1);
+
+		&::before {
+			background-color: $white;
+		}
+	}
+
+	&__text {
+		font-size: 16px;
+	}
+}

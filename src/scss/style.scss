@@ -10,6 +10,7 @@
 
 // * components
 @import './components/header';
+@import './components/form';
 @import './components/footer';
 
 // * templates
@@ -20,3 +21,7 @@
 
 // * home-page
 @import './home-page/about';
+@import './home-page/benefits';
+@import './home-page/form-questions';
+@import './home-page/contacts';
+@import './home-page/form-request';

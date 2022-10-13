@@ -33,11 +33,14 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px 82px;
 	color: $white;
 	font-weight: $fw-600;
 	background-image: linear-gradient(274.23deg, #ffde59 -39.57%, #dca553 99.29%);
 	border-radius: 50px;
+    @include adaptiv-value('padding-top', 20, 15, 1);
+    @include adaptiv-value('padding-bottom', 20, 15, 1);
+	@include adaptiv-value('padding-right', 82, 35, 1);
+	@include adaptiv-value('padding-left', 82, 35, 1);
 
 	&--dark {
 		color: $dark-800;
@@ -91,7 +94,8 @@ body {
 }
 
 .section {
-	padding: 100px 0;
+    @include adaptiv-value('padding-bottom', 100, 50, 1);
+	@include adaptiv-value('padding-top', 100, 50, 1);
 }
 
 .logo {
