@@ -11,6 +11,7 @@
 // * components
 @import './components/header';
 @import './components/form';
+@import './components/object-card';
 @import './components/footer';
 
 // * templates
@@ -23,5 +24,7 @@
 @import './home-page/about';
 @import './home-page/benefits';
 @import './home-page/form-questions';
+@import './home-page/objects';
+@import './home-page/tour';
 @import './home-page/contacts';
 @import './home-page/form-request';

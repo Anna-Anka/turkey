@@ -1,0 +1,73 @@
+<section class="objects section" id="objects">
+    <div class="container">
+        <h2 class="objects__title title">
+            Доступные объекты
+        </h2>
+
+        <div class="objects__wrapper swiper">
+            <ul class="objects__items swiper-wrapper">
+                <li class="objects__item objects__item--bottom swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '1',
+                    'title' : 'Hotel “ Simple”',
+                    'rating' : '5'
+                    })
+                </li>
+                <li class="objects__item objects__item--bottom swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '2',
+                    'title' : 'Apartments “ Star”',
+                    'rating' : '4'
+                    })
+                </li>
+                <li class="objects__item swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '3',
+                    'title' : 'Hotel “ Sun”',
+                    'rating' : '5'
+                    })
+                </li>
+                <li class="objects__item swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '4',
+                    'title' : 'Hotel “ Secret”',
+                    'rating' : '4'
+                    })
+                </li>
+
+                <li class="objects__item objects__item--bottom swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '1',
+                    'title' : 'Hotel “ Simple”',
+                    'rating' : '5'
+                    })
+                </li>
+                <li class="objects__item objects__item--bottom swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '2',
+                    'title' : 'Apartments “ Star”',
+                    'rating' : '4'
+                    })
+                </li>
+                <li class="objects__item swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '3',
+                    'title' : 'Hotel “ Sun”',
+                    'rating' : '5'
+                    })
+                </li>
+                <li class="objects__item swiper-slide">
+                    @include('./../components/_object-card.html', {
+                    'img' : '4',
+                    'title' : 'Hotel “ Secret”',
+                    'rating' : '4'
+                    })
+                </li>
+            </ul>
+            <div class="objects__buttons">
+                <button class="objects__arrow objects__arrow--prev swiper-button-prev" type="button"></button>
+                <button class="objects__arrow objects__arrow--next swiper-button-next" type="button"></button>
+            </div>
+        </div>
+    </div>
+</section>

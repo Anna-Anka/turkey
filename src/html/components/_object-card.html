@@ -1,0 +1,31 @@
+<article class="object-card">
+    <picture>
+       <source srcset="img/objects/@img.avif" type="image/avif">
+       <source srcset="img/objects/@img.webp" type="image/webp">
+       <img class="object-card__img" src="img/objects/@img.jpg" alt="@title" width="560" height="462" loading="lazy">
+    </picture>
+    <div class="object-card__content">
+        <h3 class="object-card__title">@title</h3>
+
+        @if(context.rating === '5') {
+        <ul class="object-card__rating">
+            <span class="sr-only">Рейтинг 5 из 5</span>
+            <li class="object-card__star"></li>
+            <li class="object-card__star"></li>
+            <li class="object-card__star"></li>
+            <li class="object-card__star"></li>
+            <li class="object-card__star"></li>
+        </ul>
+
+        }
+        @if(context.rating === '4') {
+            <ul class="object-card__rating">
+                <span class="sr-only">Рейтинг 4 из 5</span>
+                <li class="object-card__star"></li>
+                <li class="object-card__star"></li>
+                <li class="object-card__star"></li>
+                <li class="object-card__star"></li>
+            </ul>
+        }
+    </div>
+</article>

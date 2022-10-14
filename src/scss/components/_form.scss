@@ -37,8 +37,8 @@
 	&__field {
 		width: 100%;
 		padding: 23px 20px;
-        @include adaptiv-value('padding-top', 23, 15, 1);
-        @include adaptiv-value('padding-bottom', 23, 15, 1);
+		@include adaptiv-value('padding-top', 23, 15, 1);
+		@include adaptiv-value('padding-bottom', 23, 15, 1);
 		background-color: $white;
 		border-radius: 50px;
 
@@ -51,7 +51,7 @@
 		display: flex;
 		align-items: center;
 		color: $white;
-        font-size: 14px;
+		font-size: 14px;
 	}
 
 	&__hidden {
@@ -69,13 +69,13 @@
 	&__visible {
 		position: relative;
 		display: inline-block;
+		flex: 0 0 22px;
 		width: 22px;
 		height: 22px;
 		margin-right: 10px;
 		background-color: transparent;
 		border: 1px solid $white;
 		transition: background-color 0.4s;
-        flex: 0 0 22px;
 
 		&::before {
 			position: absolute;

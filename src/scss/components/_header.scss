@@ -3,6 +3,7 @@
 	min-height: 100vh;
 	@include bg-cover;
 	@include flex-direction-sb;
+	@include adaptiv-value('margin-bottom', 100, 50, 1);
 
 	&__top {
 		padding: 16px 0;
