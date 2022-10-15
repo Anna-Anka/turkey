@@ -37,10 +37,12 @@
 	&__field {
 		width: 100%;
 		padding: 23px 20px;
-		@include adaptiv-value('padding-top', 23, 15, 1);
-		@include adaptiv-value('padding-bottom', 23, 15, 1);
+        color: $dark-800;
 		background-color: $white;
 		border-radius: 50px;
+		@include adaptiv-value('padding-top', 23, 15, 1);
+		@include adaptiv-value('padding-bottom', 23, 15, 1);
+        font-size: 16px;
 
 		&::placeholder {
 			font-size: 16px;

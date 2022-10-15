@@ -1,16 +1,6 @@
 .contacts {
 	padding-bottom: 0;
 
-	&__title {
-		max-width: 50%;
-		margin-left: auto;
-
-		@include mq('tablet-2') {
-			max-width: 100%;
-			margin: 0 auto 40px;
-		}
-	}
-
 	&__items {
 		display: flex;
 		justify-content: space-between;

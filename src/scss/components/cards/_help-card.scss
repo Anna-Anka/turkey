@@ -1,0 +1,70 @@
+.help-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__bg {
+		@include bg-cover;
+		position: relative;
+		z-index: 2;
+		width: 100%;
+		max-width: 380px;
+		height: 410px;
+		border-radius: 50px;
+
+		@include mq('tablet-2') {
+			max-width: 90%;
+		}
+
+		@include mq('tablet-2') {
+			max-width: 100%;
+		}
+	}
+
+	&__content {
+		position: relative;
+		display: flex;
+		min-height: 322px;
+		margin-top: -60px;
+		padding: 90px 35px 35px 65px;
+
+		@include mq('tablet') {
+			min-height: auto;
+			margin-top: -40px;
+			padding: 70px 20px 35px;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: -1;
+			width: 100%;
+			width: 100vw;
+			height: 100%;
+			background-image: linear-gradient(
+				130.76deg,
+				#278f7f 0.96%,
+				#75c4f1 200.58%
+			);
+			content: '';
+
+			@include mq('tablet') {
+				right: -15px;
+			}
+		}
+	}
+
+	&__text {
+		margin: auto 0;
+		color: $white;
+		@include adaptiv-value('font-size', 25, 18, 1);
+		font-weight: $fw-500;
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

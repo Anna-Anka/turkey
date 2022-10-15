@@ -11,17 +11,21 @@
 // * components
 @import './components/header';
 @import './components/form';
-@import './components/object-card';
 @import './components/footer';
+
+// * cards
+@import './components/cards/object-card';
+@import './components/cards/help-card';
 
 // * templates
 //@import './templates/stepper';
 //@import './templates/accordion';
-//@import './templates/modal';
+@import './templates/modal';
 //@import './templates/marquee';
 
 // * home-page
 @import './home-page/about';
+@import './home-page/help';
 @import './home-page/benefits';
 @import './home-page/form-questions';
 @import './home-page/objects';

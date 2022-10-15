@@ -1,5 +1,5 @@
 .graph-modal {
-	--transition-time: 0.3s;
+	--transition-time: 0.4s;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -9,44 +9,74 @@
 	overflow-x: hidden;
 	overflow-y: auto;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba($black, 0.7);
 	visibility: hidden;
 	cursor: pointer;
 	opacity: 0;
 	transition: opacity var(--transition-time), visibility var(--transition-time);
 
-	&::before {
-		display: inline-block;
-		height: 100%;
-		vertical-align: middle;
-		content: '';
-	}
-
 	&__container {
-		position: relative;
-		display: inline-block;
+		@include flex-all-center;
 		display: none;
-		width: 1000px;
-		margin: 50px auto;
-		padding: 20px;
+		width: 100%;
+		min-height: 100%;
+		padding: 20px 0;
 		text-align: left;
-		vertical-align: middle;
-		background-color: #fff;
-		border-radius: 10px;
 		cursor: default;
 
 		&.graph-modal-open {
-			display: inline-block;
+			@include flex-all-center;
+			padding: 20px;
+
+			@include mq('tablet') {
+				padding: 20px 0;
+			}
 		}
+
+		@include mq('tablet') {
+			max-width: 100%;
+		}
+	}
+
+	&__box {
+		position: relative;
+		width: 100%;
+		max-width: 700px;
+		background-color: $turquoise-400;
+		background-color: $turquoise-400;
+		@include flex-all-center;
+		@include adaptiv-value('padding-bottom', 50, 30, 1);
+		@include adaptiv-value('padding-left', 48, 20, 1);
+		@include adaptiv-value('padding-right', 48, 20, 1);
+		@include adaptiv-value('padding-top', 100, 60, 1);
+		@include adaptiv-value('border-radius', 50, 28, 1);
 	}
 
 	&__close {
 		position: absolute;
-		top: 10px;
-		right: 10px;
-		width: 20px;
-		height: 20px;
-		background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 512.001 512.001' style='enable-background:new 0 0 512.001 512.001;' xml:space='preserve'%3E%3Cg%3E%3Cg%3E%3Cpath d='M284.286,256.002L506.143,34.144c7.811-7.811,7.811-20.475,0-28.285c-7.811-7.81-20.475-7.811-28.285,0L256,227.717 L34.143,5.859c-7.811-7.811-20.475-7.811-28.285,0c-7.81,7.811-7.811,20.475,0,28.285l221.857,221.857L5.858,477.859 c-7.811,7.811-7.811,20.475,0,28.285c3.905,3.905,9.024,5.857,14.143,5.857c5.119,0,10.237-1.952,14.143-5.857L256,284.287 l221.857,221.857c3.905,3.905,9.024,5.857,14.143,5.857s10.237-1.952,14.143-5.857c7.811-7.811,7.811-20.475,0-28.285 L284.286,256.002z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+		background-image: url('../img/icons/close.svg');
+		@include adaptiv-value('right', 54, 20, 1);
+		@include adaptiv-value('top', 54, 20, 1);
+		@include adaptiv-value('width', 64, 44, 1);
+		@include adaptiv-value('height', 64, 44, 1);
+		@include bg-conatin;
+	}
+
+	&__title {
+		color: $white;
+		@include adaptiv-value('margin-bottom', 60, 40, 1);
+
+		&::before {
+			background-color: $white;
+		}
+	}
+
+	&__bg {
+		max-width: 380px;
+		margin: 0 auto;
+		@include adaptiv-value('border-radius', 50, 28, 1);
+		@include adaptiv-value('height', 387, 300, 1);
+		@include bg-cover;
 	}
 
 	&.is-open {
