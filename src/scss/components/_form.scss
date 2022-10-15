@@ -37,23 +37,38 @@
 	&__field {
 		width: 100%;
 		padding: 23px 20px;
-        color: $dark-800;
+		color: $dark-800;
+		font-size: 16px;
 		background-color: $white;
 		border-radius: 50px;
 		@include adaptiv-value('padding-top', 23, 15, 1);
 		@include adaptiv-value('padding-bottom', 23, 15, 1);
-        font-size: 16px;
+		transition: box-shadow 0.4s;
 
 		&::placeholder {
 			font-size: 16px;
+			transition: color 0.3s;
+		}
+
+		&:focus {
+			outline: 0;
+			box-shadow: 0 0 0 3px $yellow-400;
+		}
+
+		&:hover {
+			&::placeholder {
+				color: $dark-800;
+			}
 		}
 	}
 
 	&__agree {
 		display: flex;
 		align-items: center;
+		align-self: flex-start;
 		color: $white;
 		font-size: 14px;
+		cursor: pointer;
 	}
 
 	&__hidden {
@@ -77,7 +92,8 @@
 		margin-right: 10px;
 		background-color: transparent;
 		border: 1px solid $white;
-		transition: background-color 0.4s;
+		cursor: pointer;
+		transition: background-color 0.4s, border-color 0.4s;
 
 		&::before {
 			position: absolute;
@@ -89,5 +105,13 @@
 			content: '';
 			@include bg-conatin;
 		}
+
+		&:hover {
+			border-color: $yellow-400;
+		}
 	}
+
+    &__button {
+        @include button-hover;
+    }
 }

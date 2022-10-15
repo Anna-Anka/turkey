@@ -41,6 +41,15 @@ body {
 	@include adaptiv-value('padding-bottom', 20, 15, 1);
 	@include adaptiv-value('padding-right', 82, 35, 1);
 	@include adaptiv-value('padding-left', 82, 35, 1);
+	transition: opacity 0.4, box-shadow 0.4s;
+
+	&:focus {
+		box-shadow: 0 0 0 2px $white;
+	}
+
+	&:active {
+		opacity: 0.8;
+	}
 
 	&--dark {
 		color: $dark-800;
@@ -73,9 +82,9 @@ body {
 	height: 100vh;
 	overflow: hidden;
 
-    @include mq('tablet-2') {
-        width: 100%;
-    }
+	@include mq('tablet-2') {
+		width: 100%;
+	}
 }
 
 .title {
@@ -118,10 +127,34 @@ body {
 	width: 100%;
 	@include adaptiv-value('max-width', 72, 48, 1);
 	@include adaptiv-value('height', 72, 48, 1);
+	transition: opacity 0.4s, box-shadow 0.4s;
+
+	&:focus {
+		border-radius: 8px;
+		box-shadow: 0 0 0 2px $yellow-400;
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:active {
+		opacity: 0.5;
+	}
 
 	&__img {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+	}
+}
+
+@keyframes button {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(10px);
 	}
 }

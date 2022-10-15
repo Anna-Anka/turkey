@@ -49,6 +49,10 @@
 		}
 	}
 
+    &__link {
+        @include link-state;
+    }
+
 	&__bottom {
 		@include flex-center-sb;
 		color: $grey-600;
@@ -62,6 +66,7 @@
 	&__politics {
 		margin-right: 20px;
 		text-decoration: underline;
+        @include link-state;
 
 		@include mq('phone') {
 			margin-right: 0;

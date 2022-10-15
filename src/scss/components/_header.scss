@@ -6,8 +6,18 @@
 	@include adaptiv-value('margin-bottom', 100, 50, 1);
 
 	&__top {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 10;
+		width: 100%;
 		padding: 16px 0;
-		background-color: rgba($white, 0.7);
+		background-color: rgba($white, 0.8);
+
+		&--fixed {
+			position: fixed;
+		}
 	}
 
 	&__navigation {
@@ -96,6 +106,8 @@
 	}
 
 	&__link {
+		@include button-animation;
+
 		@include mq('phone') {
 			width: 100%;
 			padding: 15px 20px;
@@ -145,5 +157,9 @@
 				margin-bottom: 15px;
 			}
 		}
+	}
+
+	&__link {
+        @include link-state;
 	}
 }

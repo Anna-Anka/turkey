@@ -1,67 +1,88 @@
 /* stylelint-disable */
 
 @mixin bg-cover {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 @mixin bg-conatin {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 @mixin flex-all-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 @mixin flex-center-sb {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 @mixin flex-v-center {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 @mixin flex-direction-v-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 @mixin flex-direction-sb {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
+@mixin button-animation {
+	transition: transform 0.4s, opacity 0.4, box-shadow 0.4s;
+	animation: 0.8s infinite alternate button;
+
+	&:hover {
+		animation-play-state: paused;
+	}
+}
+
+@mixin button-hover {
+	transition: opacity 0.4, box-shadow 0.4s, background-color 0.4s;
+
+	&:hover {
+		background-color: $yellow-400;
+		background-image: none;
+	}
+}
+
+@mixin link-state {
+	border-radius: 8px;
+	transition: color 0.4s, opacity 0.4s, box-shadow 0.4s;
+
+	&:focus {
+		box-shadow: 0 0 0 2px $yellow-400;
+	}
+
+	&:hover {
+		color: $turquoise-400;
+	}
+
+	&:active {
+		opacity: 0.7;
+	}
+}
 
 @mixin image-set($pathToImage) {
-  background-image: url("#{$pathToImage}.jpg");
-  /* stylelint-disable-next-line declaration-block-no-duplicate-properties */
-  background-image: image-set(
-    /* stylelint-disable-next-line function-comma-newline-after */
-    "#{$pathToImage}.avif"type("image/avif"),
-    "#{$pathToImage}.webp"type("image/webp"),
-    "#{$pathToImage}.jpg"type("image/jpg")
-  );
+	background-image: url('#{$pathToImage}.jpg');
+	/* stylelint-disable-next-line declaration-block-no-duplicate-properties */
+	background-image: image-set(
+		/* stylelint-disable-next-line function-comma-newline-after */
+			'#{$pathToImage}.avif'type('image/avif'),
+		'#{$pathToImage}.webp'type('image/webp'),
+		'#{$pathToImage}.jpg'type('image/jpg')
+	);
 }
-
-@mixin blackout {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: $black;
-    transition: opacity 0.3s;
-}
-
-
-

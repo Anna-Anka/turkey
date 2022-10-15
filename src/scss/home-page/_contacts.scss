@@ -50,9 +50,13 @@
 		}
 	}
 
+	&__link {
+		@include link-state;
+	}
+
 	&__map {
 		width: 100%;
-        @include adaptiv-value("height", 460, 360, 1);
+		@include adaptiv-value('height', 460, 360, 1);
 
 		iframe {
 			width: 100%;

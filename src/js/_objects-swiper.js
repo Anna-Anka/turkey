@@ -1,10 +1,18 @@
 export const swiper = new Swiper('.objects__wrapper', {
     centerMode: true,
     initialSlide: 2,
+    loop: true,
+    speed: 800,
 
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+    },
+    
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        stopOnlastSlide: false,
     },
 
     breakpoints: {

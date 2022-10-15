@@ -1,5 +1,4 @@
 .objects {
-
 	&__wrapper {
 		overflow: visible;
 	}
@@ -40,14 +39,11 @@
 		width: 100%;
 		max-width: 165px;
 		height: 40px;
+        border-radius: 8px;
+        transition: box-shadow 0.4, opacity 0.4s;
 
 		&::after {
-			@include bg-conatin;
-			left: 0;
-			width: 100%;
-			height: 16px;
-			font-size: 0;
-			background-image: url('../img/icons/arrow.svg');
+			display: none;
 		}
 
 		&:not(:last-child) {
@@ -57,5 +53,26 @@
 		&--next {
 			transform: rotate(180deg);
 		}
+
+        &:focus {
+            box-shadow: 0 0 0 2px $yellow-400;
+        }
+
+        &:hover {
+            .objects__icon {
+                fill: $yellow-400;
+            }
+        }
+
+        &:active {
+            opacity: 0.7;
+        }
+	}
+
+	&__icon {
+        width: 100%;
+        height: 100%;
+        transition: fill 0.4s;
+		fill: $turquoise-400;
 	}
 }
