@@ -3,6 +3,7 @@ export const swiper = new Swiper('.objects__wrapper', {
     initialSlide: 2,
     loop: true,
     speed: 800,
+    observer: true,
 
     navigation: {
         nextEl: ".swiper-button-next",
