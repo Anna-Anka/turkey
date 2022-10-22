@@ -39,7 +39,7 @@ burger()
 // import { enableScroll } from './templates/enable-scroll';
 
 // * Реализация модального окна
-// import GraphModal from 'graph-modal';
+//import GraphModal from 'graph-modal';
 // const modal = new GraphModal('modal');
 
 // * Реализация табов

@@ -9,6 +9,7 @@ export const formFunction = () => {
             const body = document.querySelector('.body')
             const closeBtn = document.querySelector('.graph-modal__close')
             const modalBox = document.querySelector('.graph-modal__box');
+            let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
 
             open = () => {
                 modalContainer.scrollTo(0, 0)
@@ -17,6 +18,7 @@ export const formFunction = () => {
                 body.classList.add('disable-scroll');
                 document.documentElement.style.scrollBehavior = 'auto';
                 modalContainer.classList.add('graph-modal-open');
+                body.style.paddingRight = paddingOffset;
             }
 
             close = () => {
@@ -26,6 +28,7 @@ export const formFunction = () => {
                 body.classList.remove('disable-scroll');
                 document.body.style.scrollBehavior = 'auto';
                 document.documentElement.style.scrollBehavior = 'auto';
+                body.style.paddingRight = '0px';
             }
 
             open()
