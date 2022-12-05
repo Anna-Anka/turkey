@@ -14,8 +14,6 @@ const svgmin = require('gulp-svgmin');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
 const fileInclude = require('gulp-file-include');
-
-//Следующие три сомнительные
 const rev = require('gulp-rev');
 const revRewrite = require('gulp-rev-rewrite');
 const revDel = require('gulp-rev-delete-original');
@@ -37,8 +35,7 @@ const zip = require('gulp-zip');
 const rootFolder = path.basename(path.resolve());
 const ttf2woff = require('gulp-ttf2woff');
 const ttf2woff2 = require('gulp-ttf2woff2');
-
-// paths
+const ghPages = require('gh-pages');
 const srcFolder = './src';
 const buildFolder = './app';
 const paths = {
@@ -58,6 +55,10 @@ let isProd = false; // dev by default
 
 const clean = () => {
   return del([buildFolder])
+}
+
+const deploy = (cb) => {
+    ghPages.publish(path.join(process.cwd(), 'app'), cb);
 }
 
 //fonts
@@ -334,5 +335,7 @@ exports.backend = series(clean, fonts, htmlInclude, scriptsBackend, stylesBacken
 exports.build = series(toProd, clean, fonts, htmlInclude, scripts, styles, resources, images, webpImages, avifImages, svgSprites, htmlMinify);
 
 exports.cache = series(cache, rewrite);
+
+exports.deploy = deploy;
 
 exports.zip = zipFiles;

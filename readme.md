@@ -8,6 +8,7 @@
 3) CSS и препроцессор scss
 4) javascript
 5) stylelint
+6) Методология БЭМ
 
 <p></p>
 

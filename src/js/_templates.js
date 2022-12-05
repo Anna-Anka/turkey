@@ -39,8 +39,13 @@ burger()
 // import { enableScroll } from './templates/enable-scroll';
 
 // * Реализация модального окна
-//import GraphModal from 'graph-modal';
-// const modal = new GraphModal('modal');
+import GraphModal from 'graph-modal';
+
+const questionsForm = document.querySelector('.form-questions__form')
+questionsForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const modal = new GraphModal('modal').open('thank');
+})
 
 // * Реализация табов
 //import GraphTabs from 'graph-tabs';
